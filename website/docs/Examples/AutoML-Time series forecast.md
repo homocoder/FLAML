@@ -429,6 +429,7 @@ plt.legend()
 ### Multivariate Time Series (Forecasting with Exogeneous Variables)
 ```python
 import pandas as pd
+from flaml import AutoML
 
 # pd.set_option("display.max_rows", None, "display.max_columns", None)
 multi_df = pd.read_csv(
@@ -494,7 +495,7 @@ settings = {
 }
 
 # train the model
-automl.fit(dataframe=df, **settings, period=time_horizon)
+automl.fit(dataframe=multi_df, **settings, period=multi_time_horizon)
 
 # predictions
 print(automl.predict(multi_X_test))
